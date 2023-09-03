@@ -1,0 +1,245 @@
+@import url("https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500&display=swap");
+
+/* font-family: 'Space Grotesk', sans-serif; */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+:root {
+  --Linear-gradient: hsl(249, 99%, 64%) to hsl(278, 94%, 30%);
+  --Red: hsl(0, 100%, 66%);
+  --White: hsl(0, 0%, 100%);
+  --Light-grayish-violet: hsl(270, 3%, 87%);
+  --Dark-grayish-violet: hsl(279, 6%, 55%);
+  --Very-dark-violet: hsl(278, 68%, 11%);
+}
+
+body {
+  background: var(--White);
+  height: 100vh;
+  font-family: "Space Grotesk", sans-serif;
+}
+
+.container {
+  width: 100%;
+  display: flex;
+}
+
+.main {
+  width: 50%;
+  display: flex;
+}
+
+.background {
+  background: url(images/bg-main-desktop.png) no-repeat center center/cover;
+  height: 100vh;
+  width: 50%;
+}
+
+.bg-card-front {
+  background: url(images/bg-card-front.png) no-repeat center center/cover;
+  height: 180px;
+  width: 310px;
+  margin-top: 6rem;
+  margin-left: 6rem;
+  color: var(--White);
+  border-radius: 10px;
+}
+
+.logo {
+  height: 32px;
+  margin: 1.5rem 1.5rem;
+}
+
+.first-p {
+  padding: 1rem 1.5rem;
+  font-size: 18px;
+  letter-spacing: 3px;
+}
+
+.card-number {
+  display: flex;
+  width: 90%;
+  justify-content: space-between;
+  align-items: center;
+  letter-spacing: 2px;
+}
+
+.second-p {
+  font-size: 9px;
+  padding: 0.5rem 1.5rem;
+}
+
+.card-number h2 {
+  font-size: 11px;
+  font-weight: lighter;
+}
+
+.bg-card-back {
+  background: url(images/bg-card-back.png) no-repeat center center/cover;
+  height: 180px;
+  width: 310px;
+  margin-top: 1.5rem;
+  margin-left: 10rem;
+  border-radius: 10px;
+  font-size: 8px;
+  letter-spacing: 1px;
+  color: var(--White);
+}
+
+.bg-card-back h2 {
+  padding-top: 5.1rem;
+  padding-left: 16rem;
+  font-weight: lighter;
+}
+
+.content {
+  width: 50%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: start;
+}
+
+form {
+  display: block;
+  width: 45%;
+  font-size: 10px;
+  line-height: 0;
+  color: var(--Very-dark-violet);
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+input {
+  width: 100%;
+  padding: 0.5rem 0.5rem;
+  margin: 0.7rem 0;
+  border-radius: 5px;
+  border: 1px solid var(--Dark-grayish-violet);
+  color: var(--Very-dark-violet);
+}
+
+input::placeholder {
+  font-family: "Space Grotesk", sans-serif;
+}
+
+input:hover {
+  border: 1px solid hsl(249, 99%, 64%);
+}
+
+.card-info {
+  width: 100%;
+  display: flex;
+}
+
+.info {
+  display: flex;
+}
+
+#month-year {
+  width: 35%;
+  margin-right: 0.5rem;
+}
+
+#cvc-info {
+  margin-left: 0.7rem;
+}
+
+.submit {
+  background: var(--Very-dark-violet);
+  color: var(--White);
+}
+
+.submit:hover {
+  border: 1px solid;
+}
+
+.name-err,
+.cardNumber-err,
+.month-err,
+.cvc-err {
+  width: 100%;
+  color: var(--Red);
+  font-size: 9px;
+  padding-bottom: 20px;
+  font-family: "Space Grotesk", sans-serif;
+  text-transform: lowercase;
+  letter-spacing: 0;
+}
+
+.modal {
+  display: none;
+  flex-direction: column;
+  align-items: center;
+  letter-spacing: 1px;
+}
+
+.icon-complete {
+  height: 60px;
+}
+
+h3 {
+  padding: 0.8rem 0;
+  color: var(--Very-dark-violet);
+  font-weight: lighter;
+}
+
+.third-p {
+  color: var(--Dark-grayish-violet);
+  font-size: 12px;
+}
+
+button {
+  background: var(--Very-dark-violet);
+  color: var(--White);
+  padding: 0.5rem 7rem;
+  border-radius: 5px;
+  margin-top: 2.8rem;
+}
+
+/* RESPONSIVE CSS */
+@media (max-width: 768px) {
+  .container {
+    flex-direction: column;
+  }
+  .main {
+    width: 100%;
+  }
+  .background {
+    width: 100vw;
+    height: 40vh;
+  }
+
+  .bg-card-front {
+    position: absolute;
+    margin-top: 8.5rem;
+    margin-left: 1rem;
+  }
+
+  .bg-card-back {
+    margin-top: 2rem;
+    margin-left: 3.5rem;
+  }
+
+  .content {
+    width: 100%;
+    padding-top: 9rem;
+    align-items: center;
+  }
+
+  form {
+    width: 90%;
+    font-size: 13px;
+  }
+
+  .name-err,
+  .cardNumber-err,
+  .month-err,
+  .year-err,
+  .cvc-err {
+    font-size: 12px;
+  }
+}
