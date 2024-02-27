@@ -1,14 +1,5 @@
 function validate() {
   const cardNumberNot = "wrong format, numbers only";
-  const nameInput = document.querySelector(".name-input");
-  const cardNumberInput = document.querySelector(".cardNumber-input");
-  const monthInput = document.querySelector(".month-input");
-  const yearInput = document.querySelector(".year-input");
-  const cvcInput = document.querySelector(".cvc-input");
-  const firstP = document.querySelector(".first-p");
-  const secondP = document.querySelector(".second-p");
-  const frontH2 = document.querySelector(".front-h2");
-  const backH2 = document.querySelector(".back-h2");
   const form = document.querySelector(".form");
   const modal = document.querySelector(".modal");
   const name = document.form.name.value;
@@ -41,7 +32,11 @@ function validate() {
   } else {
     document.querySelector(".cardNumber-err").style.display = "none";
     document.querySelector(".cardNumber-input").style.border = "1px solid ";
-    document.querySelector(".first-p").innerHTML = cardNumber;
+    document.querySelector(".first-p").innerHTML = numberWithSpaces(cardNumber);
+  }
+
+  function numberWithSpaces(cardNumber) {
+    return cardNumber.toString().replace(/\d{4}(?=.)/g, "$& ");
   }
 
   if (dateMonth == "") {
@@ -51,14 +46,7 @@ function validate() {
   } else {
     document.querySelector(".month-err").style.display = "none";
     document.querySelector(".month-input").style.border = "1px solid ";
-    document.querySelector(".front-h2").innerHTML = dateMonth;
-  }
-
-  if (dateYear == "") {
-    document.querySelector(".year-input").style.border = "1px solid red";
-    return false;
-  } else {
-    document.querySelector(".year-input").style.border = "1px solid ";
+    document.querySelector(".front-h2").innerHTML = `${dateMonth}/${dateYear}`;
   }
 
   if (cvc == "") {
